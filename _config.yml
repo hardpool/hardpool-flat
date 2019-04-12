@@ -1,0 +1,10 @@
+# Site Settings
+title                     : "Site Title"
+title_separator           : "|"
+main_logo                 : "en-US"
+name                      : "Flat theme"
+description               : "Hardpool Jekyll simple flat theme."
+
+# Sass/SCSS
+sass:
+  style: compressed

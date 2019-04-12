@@ -1,0 +1,105 @@
+@mixin banner-bg ($img, $aspect){
+	background: {
+		image: url("#{$p-img}#{$img}");
+		size: cover;
+		repeat: no-repeat;
+		position: center;
+	}
+	width: 100%;
+	height: 100vw/$aspect;
+	position: absolute;
+}
+@mixin circle-image ($size, $url:"not-provided"){
+	background: {
+		size: 100% auto;
+		repeat: no-repeat;
+		@if $url != "not-provided" {
+			image: url("#{$p-img}#{$url}");
+		}
+	}
+	width: $size;
+	height: $size;
+	border-radius: 100%;
+	display: inline-block;
+}
+
+@mixin transition($property:all, $duration:1s, $timinng:ease, $delay:0s){
+	-webkit-transition: $property $duration $timinng $delay;
+	-moz-transition:    $property $duration $timinng $delay;
+	-o-transition:      $property $duration $timinng $delay;
+	transition:         $property $duration $timinng $delay;
+}
+@mixin animation($name, $duration:1s, $timinng:ease, $delay:0s){
+	-webkit-animation:	$name $duration $timinng $delay normal 1 forwards running;
+	-moz-animation:	    $name $duration $timinng $delay normal 1 forwards running;
+	-o-animation:		$name $duration $timinng $delay normal 1 forwards running;
+	animation:         	$name $duration $timinng $delay normal 1 forwards running;
+}
+@mixin play-animation(){
+	-webkit-animation-play-state:	running;
+	-moz-animation-play-state:		running;
+	-o-animation-play-state:		running;
+	animation-play-state:			running;
+}
+@mixin filter($values){
+	-webkit-filter:	$values;
+	filter:			$values;
+}
+@mixin transform($value){
+	-webkit-transform: $value;
+	-moz-transform:    $value;
+	-o-transform:      $value;
+	transform:         $value;
+}
+@mixin boxshadow($value: 0px 0px 3px rgba(0, 0, 0, 0.2)){
+	box-shadow: $value;
+}
+@mixin icon-image($size: 2rem){
+  width: $size;
+  height: $size;
+  display: block;
+  margin: 0 auto;
+	background-repeat: no-repeat!important;
+}
+@mixin ddd(){
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+@mixin max-lines($lines: 3, $line-height: 1.3){
+	display: -webkit-box;
+	max-height: #{$lines*$line-height}rem;
+	line-height: $line-height;
+	-webkit-line-clamp: $lines;
+	-webkit-box-orient: vertical;
+	
+	@include ddd;
+}
+// =============================================================================
+// Font Face
+// =============================================================================
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+	$src: null;
+
+	$extmods: (
+		eot: "?",
+		svg: "#" + str-replace($name, " ", "_")
+	);
+
+	$formats: (
+		otf: "opentype",
+		ttf: "truetype"
+	);
+
+	@each $ext in $exts {
+		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+		$src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+	}
+
+	@font-face {
+		font-family: quote($name);
+		font-style: $style;
+		font-weight: $weight;
+		src: $src;
+	}
+}

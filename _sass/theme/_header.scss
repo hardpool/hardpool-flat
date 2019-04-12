@@ -1,0 +1,12 @@
+header {
+	border-top: 0.4rem solid $primary;
+
+	.main-logo{
+		$size: 10rem;
+		height: $size;
+		width: $size;
+		border-radius: 100%;
+		background-color: $gray;
+		display: inline-block;
+	}
+}

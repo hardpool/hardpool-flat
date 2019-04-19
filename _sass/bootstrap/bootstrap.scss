@@ -21,7 +21,7 @@ $h3-font-size: 1.7rem;
 $h4-font-size: 1.4rem;
 $h5-font-size: 1.2rem;
 
-$navbar-light-color: $gray/1.2;;
+$navbar-light-color: darken($gray, 12%);
 $navbar-light-hover-color: $secondary;
 $navbar-light-active-color: $secondary;
 
@@ -73,11 +73,6 @@ $navbar-light-active-color: $secondary;
 
 //========= bootstrap override ==========
 .btn{
-	font-weight: bold;
-	padding: 0.5rem 1rem;
-	border-radius: 0;
-	text-transform: uppercase;
-	font-size: 1rem;
 
 	&:active, &:focus{
 		outline: 0;
@@ -120,7 +115,7 @@ label{
 }
 a {
 	color: $secondary;
-	text-decoration: underline;
+	/* text-decoration: underline; */
 	@include transition;
 	&:hover {
 		text-decoration: none;
@@ -144,6 +139,6 @@ a {
 	padding: .5rem 1.25rem;
 }
 .btn-secondary.disabled, .btn-secondary:disabled{
-	background-color: $gray/1.2;
-	border-color: $gray/1.2;
+	background-color: darken($gray, 12%);
+	border-color: darken($gray, 12%);
 }

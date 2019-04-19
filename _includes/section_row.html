@@ -1,0 +1,25 @@
+{% if include.id %}
+  {% assign data = page[include.id] %}
+{% else %}
+  {% assign data = page.section_row %}
+{% endif %}
+
+<div class="animation-wrapper">
+  {% for r in data %}
+  <div class="fade-in pb-7">
+    <div class="row">
+      <div class="col">
+        <h1 class="display-4 text-center mb-0">{{ r.title }}</h1>
+        <p class="text-center text-info text-lg">{{ r.sub_title }}</p>
+        <img src="{{ r.image }}" class="img-fluid" alt="{{ r.alt }}">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-8 offset-2">
+        <p class="text-lg mt-3">{{ r.excerpt }}</p>
+        <a class="btn btn-primary" href="{{ r.url }}">{{ r.btn_text }}</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>

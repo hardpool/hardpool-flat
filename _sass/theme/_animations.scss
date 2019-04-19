@@ -1,0 +1,14 @@
+.animation-wrapper {
+  overflow: hidden;
+
+  .fade-in {
+    @include transition(all, 1s, $e-easeOutCubic);
+    opacity: 0;
+    transform: translateY(15rem);
+
+    &.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

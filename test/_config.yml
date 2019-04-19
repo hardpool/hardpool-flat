@@ -4,14 +4,13 @@ theme: hardpool-flat
 plugins:
   - jekyll-feed
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+# Site Settings
+title                     : "Test Site"
+title_separator           : "|"
+main_logo                 : "en-US"
+name                      : "Flat theme"
+description               : "Hardpool Jekyll simple flat theme."
+
+# Reading Files
+include:
+  - _pages

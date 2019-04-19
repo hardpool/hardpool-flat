@@ -1,0 +1,14 @@
+p {
+  color: darken($color: $gray, $amount: 30%);
+}
+.btn-icon {
+  $size: 2.6rem;
+  width: $size;
+  height: $size;
+  border-radius: 100%;
+  padding: 0;
+  font-size: $size - $size/3;
+  background-color: $gray;
+  border: none;
+  margin: 0 0.3rem;
+}

@@ -9,20 +9,12 @@ html, body {
     size: 16px;
     family: "muli";
 	}
+	color: $dark;
   overflow-x: hidden;
 }
 h1,h2,h3,h4,h5,
 .h1,.h2,.h3,.h4,.h5,{
-	// font-family: "playfair";
 	font-weight: bold;
-}
-app-header {
-	max-height: $h-header;
-	display: block;
-
-	/* @media (max-width: 767px) {
-		max-height: 5rem;
-	} */
 }
 a {
 	outline: none;
@@ -33,13 +25,7 @@ table{
 	width: 100%;
 }
 .gray-bg{
-	background: $gray*1.15;
-}
-.main-content {
-	min-height: calc(100vh - #{$h-header} - #{$h-footer});
-	@media (min-width: 768px) { 
-		min-height: calc(100vh - #{$h-header} - #{$h-footer-br});
-	}
+	background: lighten($gray, 12%);
 }
 .error-msg{
   color: $danger;

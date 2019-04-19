@@ -9,4 +9,19 @@ header {
 		background-color: $gray;
 		display: inline-block;
 	}
+
+	.nav-item{
+		margin: 0 0.7rem;
+
+		.nav-link{
+			color: $dark;
+			font-weight: bold;
+			font-size: 1.2rem;
+			padding: 0.1rem 0.2rem;
+
+			&.active {
+				border-bottom: 2px solid $primary;
+			}
+		}
+	}
 }

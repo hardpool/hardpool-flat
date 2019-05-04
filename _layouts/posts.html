@@ -1,5 +1,26 @@
 ---
 layout: contained
 ---
+{% assign data = site.collections | where: "label", page.collection | first %}
 
-{{ content }}
+<div class="animation-wrapper">
+{% for post in data.docs %}
+{% if post.featured %}
+<a class="fade-in pb-7 d-block" href="{{ post.url }}">
+  <div class="row">
+    <div class="col">
+      <h1 class="display-4 text-center mb-0">{{ post.title }}</h1>
+      <p class="text-center text-info text-lg">{{ post.sub_title }}</p>
+      {% if post.banner_image %}<img src="{{ post.banner_image }}" class="img-fluid" alt="{{ post.banner_alt }}">{% endif %}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-8 offset-2">
+      <p class="text-lg mt-3">{{ post.excerpt }}</p>
+      {% if post.btn_text %}<a class="btn btn-primary" href="{{ post.url }}">{{ post.btn_text }}</a>{% endif %}
+    </div>
+  </div>
+</a>
+{% endif %}
+{% endfor %}
+</div>

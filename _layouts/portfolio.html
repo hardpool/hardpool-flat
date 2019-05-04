@@ -1,0 +1,30 @@
+---
+layout: contained
+---
+{% assign data = site.collections | where: "label", page.collection %}
+{% if page.category %}
+  {% assign posts = data.first.docs | where: "categories", page.category %}
+{% else %}
+  {% assign posts = data.first.docs %}
+{% endif %}
+
+<!-- create categories array-->
+{% assign categories_col = "" | split:"|" %}
+<!--Add each unique 'my_collection' category to the array-->
+{% for post in posts %}
+    {% for category in post.categories %}
+        {% assign categories_col = categories_col | push: category | uniq %}
+    {% endfor %}
+{% endfor %}
+<!-- {{ categories_col }} -->
+
+<div class="row mb-5">
+{% for post in posts %}
+  <div class="col-4 portfolio-item">
+    <a class="d-block" href="{{ post.url }}">
+      <div class="picture" style="background-image:url('{{ post.banner_image }}')"></div>
+      <p class="label mt-2 mb-4 text-center">{{ post.title }}</p>
+    </a>
+  </div>
+{% endfor %}
+</div>

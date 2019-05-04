@@ -1,4 +1,4 @@
-p {
+p, li {
   color: darken($color: $gray, $amount: 30%);
 }
 .btn-icon {
@@ -11,4 +11,34 @@ p {
   background-color: $gray;
   border: none;
   margin: 0 0.3rem;
+}
+a h1 {
+  color: $dark;
+  @include transition;
+
+  &:hover {
+    color: $primary;
+  }
+}
+.lh-1{
+  line-height: 1;
+}
+
+/* ****************** portfolio ******************* */
+.portfolio-item {
+  .picture {
+    width: 100%;
+    height: 34rem;
+
+    background: {
+      size: cover;
+      position: center;
+      repeat: no-repeat; 
+    }
+  }
+  .label {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    color: $dark;
+  }
 }

@@ -1,14 +1,24 @@
 # Site Settings
-title                     : "Site Title"
+title                     : "Flat theme"
 title_separator           : "|"
 
 # Site Header
 main_logo                 : ""
 name                      : "Flat theme"
 description               : "Hardpool Jekyll simple flat theme."
-copyright                 : "Team Hardpool"
+
+collections:
+  fashion:
+    output: true
+    navigation: true
+  travel:
+    output: true
+    navigation: false
+
+collections_dir: test
 
 # Site Footer
+copyright: "Team Hardpool"
 footer:
   links:
     - label: "Twitter"

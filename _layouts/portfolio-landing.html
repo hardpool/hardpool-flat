@@ -1,4 +1,39 @@
 ---
-layout: contained
+layout: default
 ---
-{{ site.posts }}
+{% assign banners = site.posts | where: "categories", "banner" | slice: 0, 3 %}
+<div class="container-fluid bg-grad">
+  <div class="container">
+    <div id="mainbanner" class="carousel slide carousel-fade" data-ride="carousel">
+      <ol class="carousel-indicators">
+        {% for post in banners %}
+        <li data-target="#mainbanner" data-slide-to="{{ forloop.index | minus: 1 }}" {% if forloop.first %}class="active"{% endif %}></li>
+        {% endfor %}
+      </ol>
+      <div class="carousel-inner">
+        {% for post in banners %}
+        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+          <div class="row">
+            <div class="col-9 p-0">
+              <img src="{{ post.banner_image }}" class="d-block w-100" alt="{{ post.title }}">
+            </div>
+            <div class="col-4 p-0 bnr-text d-flex align-items-center h-100">
+              <div class="p-2 bnr-wrapper">
+                {{ post.excerpt }}
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <a class="carousel-control-prev" href="#mainbanner" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#mainbanner" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+</div>

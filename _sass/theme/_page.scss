@@ -23,6 +23,9 @@ a h1 {
 .lh-1{
   line-height: 1;
 }
+.carousel-control-prev, .carousel-control-next{
+  width: 5rem;
+}
 
 /* ****************** portfolio ******************* */
 .portfolio-item {
@@ -41,4 +44,19 @@ a h1 {
     line-height: 1.2;
     color: $dark;
   }
+}
+
+/* ****************** portfolio ******************* */
+.bg-grad{
+  background-image: linear-gradient(125deg, #eaeaea, #ddd);
+  background-size: 100% 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.bnr-text {
+  position: absolute;
+  right: 0;
+}
+.bnr-wrapper {
+  background: #fff;
 }

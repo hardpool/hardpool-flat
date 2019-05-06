@@ -7,16 +7,6 @@ main_logo                 : ""
 name                      : "Flat theme"
 description               : "Hardpool Jekyll simple flat theme."
 
-collections:
-  fashion:
-    output: true
-    navigation: true
-  travel:
-    output: true
-    navigation: false
-
-collections_dir: test
-
 # Site Footer
 copyright: "Team Hardpool"
 footer:
@@ -47,3 +37,7 @@ sass:
 # Reading Files
 include:
   - _pages
+
+# config
+permalink: /:title
+collections_dir: test

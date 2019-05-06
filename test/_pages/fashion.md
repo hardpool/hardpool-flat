@@ -1,6 +1,6 @@
 ---
 layout: portfolio
-title: Fatshion
+title: Fashion
 permalink: /fashion/
-collection: fashion
+category: fashion
 ---

@@ -6,6 +6,12 @@ let runAnimations = (st) => {
   fadeIn('fade-in', st);
 };
 
+let carouselInit = () => {
+  $(document).ready(() => {
+    $('.carousel').carousel();
+  });
+};
+
 let fadeIn = (className, st) => {
   let ea = d.querySelectorAll(`.${className}`);
   ea.forEach(ele => {
@@ -27,4 +33,5 @@ module.exports.init = () => {
     runAnimations(window.pageYOffset);
   };
   runAnimations(window.pageYOffset);
+  carouselInit();
 };

@@ -1,27 +1,45 @@
 header {
 	border-top: 0.4rem solid $primary;
 
-	.main-logo{
-		$size: 8rem;
-		height: $size;
-		width: $size;
-		border-radius: 100%;
-		background-color: $gray;
-		display: inline-block;
-	}
+  &.style-default{
+    .main-logo{
+      $size: 8rem;
+      height: $size;
+      width: $size;
+      border-radius: 100%;
+      background-color: $gray;
+      display: inline-block;
+    }
 
-	.nav-item{
-		margin: 0 0.7rem;
+    .nav-item{
+      margin: 0 0.7rem;
 
-		.nav-link{
-			color: $dark;
-			font-weight: bold;
-			font-size: 1.2rem;
-			padding: 0.1rem 0.2rem;
+      .nav-link{
+        color: $dark;
+        font-weight: bold;
+        font-size: 1.2rem;
+        padding: 0.1rem 0.2rem;
 
-			&.active {
-				border-bottom: 2px solid $primary;
-			}
-		}
-	}
+        &.active {
+          border-bottom: 2px solid $primary;
+        }
+      }
+    }
+  }
+  
+  &.style-1 {
+    .nav-item{
+      margin: 0 0.7rem;
+  
+      .nav-link{
+        color: $dark;
+        font-size: 1.1rem;
+        padding: 0.1rem 0.2rem;
+  
+        &.active {
+          color: $primary;
+        }
+      }
+    }
+  }
 }

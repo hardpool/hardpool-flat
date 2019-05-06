@@ -1,22 +1,19 @@
 ---
 layout: contained
 ---
-{% assign data = site.collections | where: "label", page.collection %}
+{% assign allPosts = site.posts %}
+<!-- filter posts for category -->
 {% if page.category %}
-  {% assign posts = data.first.docs | where: "categories", page.category %}
+  {% assign catPosts = allPosts | where: "categories", page.category %}
 {% else %}
-  {% assign posts = data.first.docs %}
+  {% assign catPosts = allPosts %}
 {% endif %}
-
-<!-- create categories array-->
-{% assign categories_col = "" | split:"|" %}
-<!--Add each unique 'my_collection' category to the array-->
-{% for post in posts %}
-    {% for category in post.categories %}
-        {% assign categories_col = categories_col | push: category | uniq %}
-    {% endfor %}
-{% endfor %}
-<!-- {{ categories_col }} -->
+<!-- filter posts for tag -->
+{% if page.tag %}
+  {% assign posts = catPosts | where: "tags", page.tag %}
+{% else %}
+  {% assign posts = catPosts %}
+{% endif %}
 
 <div class="row mb-5">
 {% for post in posts %}

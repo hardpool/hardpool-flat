@@ -9,6 +9,16 @@
 	height: 100vw/$aspect;
 	position: absolute;
 }
+@mixin picture-bg ($height){
+	width: 100%;
+  height: $height;
+
+  background: {
+    size: cover;
+    position: center;
+    repeat: no-repeat; 
+  }
+}
 @mixin circle-image ($size, $url:"not-provided"){
 	background: {
 		size: 100% auto;

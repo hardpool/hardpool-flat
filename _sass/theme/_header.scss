@@ -1,5 +1,11 @@
 header {
-	border-top: 0.4rem solid $primary;
+  border-top: 0.4rem solid $primary;
+  
+  .navbar-light .navbar-brand{
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    color: $dark;
+  }
 
   &.style-default{
     .main-logo{
@@ -33,7 +39,7 @@ header {
   
       .nav-link{
         color: $dark;
-        font-size: 1.1rem;
+        font-size: 1rem;
         padding: 0.1rem 0.2rem;
   
         &.active {

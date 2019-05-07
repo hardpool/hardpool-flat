@@ -12,15 +12,15 @@ $p-img			: unquote("/assets/img/");
 // $red				:	#f45549; //rgb(240,90,65);
 // $yellow			:	rgb(255,220,60);
 
+$dark				: #333;
 $gray				: #ccc;
-$primary		: #a53faa;
-$secondary	: #3952a1;
+$primary		: #dbb50f;
+$secondary	: $dark;
 $success		: #02c33d;
 $info				: darken($gray, 12%);
 $warning		: #d9834f;
 $danger			: #d62337;
 $text-muted	: $gray;
-$dark				: #333;
 
 // // =============================================================================
 // // height-width

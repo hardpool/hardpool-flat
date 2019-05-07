@@ -1,5 +1,7 @@
-@include font-face(muli, "/assets/fonts/muli/Muli-Regular", 300, normal, ttf);
-@include font-face(muli, "/assets/fonts/muli/Muli-Bold", 600, bold, ttf);
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600|Playfair+Display:400,700');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+// @include font-face(muli, "/assets/fonts/muli/Muli-Regular", 300, normal, ttf);
+// @include font-face(muli, "/assets/fonts/muli/Muli-Bold", 600, bold, ttf);
 // @include font-face(woodford, "/assets/fonts/woodford/woodfordbourne-thin", 100, thin, otf);
 // @include font-face(woodford, "/assets/fonts/woodford/woodfordbourne-thinitalic", 100, italic, otf);
 
@@ -7,14 +9,16 @@
 html, body {
 	font: {
     size: 16px;
-    family: "muli";
+    family: 'Montserrat', sans-serif;
 	}
 	color: $dark;
   overflow-x: hidden;
 }
 h1,h2,h3,h4,h5,
-.h1,.h2,.h3,.h4,.h5,{
-	font-weight: bold;
+.h1,.h2,.h3,.h4,.h5{
+  font-weight: bold;
+  font-family: 'Playfair Display', serif;
+  color: #000;
 }
 a {
 	outline: none;

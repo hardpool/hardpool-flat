@@ -9,6 +9,9 @@ a h1 {
     color: $primary;
   }
 }
+img {
+  image-orientation: from-image;
+}
 .btn {
   border-radius: 0;
   font-size: 0.85rem;
@@ -117,9 +120,13 @@ a h1 {
   background-repeat: no-repeat;
   background-position: center;
 }
-.bnr-text {
+.overlap-right {
   position: absolute;
   right: 0;
+}
+.overlap-left {
+  position: absolute;
+  left: 0;
 }
 .bnr-wrapper {
   background: #fff;
@@ -130,4 +137,9 @@ a h1 {
 .thumb-post{
   @include picture-bg(auto);
   padding-top: 100%;
+}
+.img-overlap{
+  border: 0.5rem solid #fff;
+  z-index: 2;
+  position: relative;
 }

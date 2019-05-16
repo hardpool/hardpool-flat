@@ -45,8 +45,8 @@ layout: default
   </div>
 </div>
 <!-- banner end -->
-<!-- section 2 start -->
-<p class="text-center section-heading"><span>My outfits</span></p>
+<!-- shop outfit start -->
+<p class="section-heading"><span>My outfits</span></p>
 {% assign thumbs = site.posts | where_exp: "item", "item.insta_sc" | slice: 0, 6 %}
 <div class="container mb-5">
   <div class="row sm-gutters">
@@ -57,7 +57,7 @@ layout: default
     {% endfor %}
   </div>
 </div>
-<!-- section 2 end -->
+<!-- shop outfit start end -->
 <!-- section 3 start -->
 {% assign featured = site.posts | where: "categories", "featured" %}
 <div class="container mb-5">

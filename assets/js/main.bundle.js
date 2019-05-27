@@ -97,6 +97,17 @@ eval("let d = document;\nlet showThreshold = 150;\nlet hideThreshold = 100;\n\nl
 
 /***/ }),
 
+/***/ "./_js/insta-recent.js":
+/*!*****************************!*\
+  !*** ./_js/insta-recent.js ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports.init = () => {\n  fetch('https://api.instagram.com/v1/users/self/media/recent/?access_token=2321794898.c625d4b.52d85f33c6074769a1052765b092bc06&count=6')\n    .then(response => {\n      return response.json();\n    })\n    .then(myJson => {\n      console.log(myJson);\n    });\n  document.querySelector(\"#footer-insta-port\").innerHTML = \"test\";\n};\n\n//# sourceURL=webpack:///./_js/insta-recent.js?");
+
+/***/ }),
+
 /***/ "./_js/main.js":
 /*!*********************!*\
   !*** ./_js/main.js ***!
@@ -105,7 +116,7 @@ eval("let d = document;\nlet showThreshold = 150;\nlet hideThreshold = 100;\n\nl
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _animations__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./animations */ \"./_js/animations.js\");\n/* harmony import */ var _animations__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_animations__WEBPACK_IMPORTED_MODULE_0__);\n\n\n_animations__WEBPACK_IMPORTED_MODULE_0___default.a.init();\n\n//# sourceURL=webpack:///./_js/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _animations__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./animations */ \"./_js/animations.js\");\n/* harmony import */ var _animations__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_animations__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _insta_recent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./insta-recent */ \"./_js/insta-recent.js\");\n/* harmony import */ var _insta_recent__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_insta_recent__WEBPACK_IMPORTED_MODULE_1__);\n\n\n\n_animations__WEBPACK_IMPORTED_MODULE_0___default.a.init();\n_insta_recent__WEBPACK_IMPORTED_MODULE_1___default.a.init();\n\n//# sourceURL=webpack:///./_js/main.js?");
 
 /***/ })
 

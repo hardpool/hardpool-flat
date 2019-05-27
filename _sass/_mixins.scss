@@ -9,7 +9,7 @@
 	height: 100vw/$aspect;
 	position: absolute;
 }
-@mixin picture-bg ($height){
+@mixin picture-bg ($height: auto){
 	width: 100%;
   height: $height;
 

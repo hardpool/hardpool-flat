@@ -123,21 +123,39 @@ img {
     }
   }
 }
-
-/* ****************** portfolio ******************* */
-.portfolio-item {
-  .picture {
-    @include picture-bg(34rem);
-    // width: 100%;
-    // height: 34rem;
-
-    // background: {
-    //   size: cover;
-    //   position: center;
-    //   repeat: no-repeat; 
-    // }
+.modal-backdrop {
+  background-color: #fff;
+  &.show{
+    opacity: .95;
   }
 }
+.modal-content {
+  background: transparent;
+  border: none;
+
+  .modal-header, .modal-footer {
+    border: none;
+  }
+}
+.img-11{
+  @include picture-bg;
+  padding-top: 100%; 
+}
+.img-34{
+  @include picture-bg;
+  padding-top: 133.3333%;
+}
+.img-43{
+  @include picture-bg;
+  padding-top: 75%;
+}
+
+/* ****************** portfolio ******************* */
+/* .portfolio-item {
+  .picture {
+    @include picture-bg(34rem);
+  }
+} */
 
 /* ****************** portfolio-landing ******************* */
 .bg-grad{

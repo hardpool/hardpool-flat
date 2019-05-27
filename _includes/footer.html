@@ -1,10 +1,17 @@
 <footer>
   <div class="container-fluid pt-5">
-    <div class="row" id="footer-insta-port">
-
+    <div class="row md-gutters footer-insta-port" id="footer-insta-port">
+      <div class="col">
+        <a href="##__insta_url__##" target="_blank" class="insta-img">
+          <div class="img-11" style="background-image:url('##__image_url__##')"></div>
+          <div class="overlay">
+            <p><i class="fa fa-comment mx-1"></i>##__insta_comment__##<i class="fa fa-heart mx-1 ml-2"></i>##__insta_like__##</p>
+          </div>
+        </a>
+      </div>
     </div>
   </div>
-  <div class="container text-center pt-3 pb-4">
+  <div class="container text-center py-4">
     <div class="row">
       <div class="col">
         {%- if site.footer.links -%}

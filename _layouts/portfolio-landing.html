@@ -47,11 +47,11 @@ layout: default
 <!-- banner end -->
 <!-- shop outfit start -->
 <p class="section-heading"><span>My outfits</span></p>
-{% assign thumbs = site.posts | where_exp: "item", "item.insta_sc" | slice: 0, 6 %}
+{% assign thumbs = site.posts | where_exp: "item", "item.insta_sc" | slice: 0, 5 %}
 <div class="container mb-5">
   <div class="row sm-gutters">
     {%- for post in thumbs -%}
-    <div class="col col-md-2">
+    <div class="col">
       <div class="thumb-post" style="background-image:url('https://instagram.com/p/{{ post.insta_sc }}/media/?size=m')"></div>
     </div>
     {%- endfor -%}

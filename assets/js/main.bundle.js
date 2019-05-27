@@ -93,7 +93,18 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("let d = document;\nlet showThreshold = 150;\nlet hideThreshold = 100;\n\nlet runAnimations = (st) => {\n  fadeIn('fade-in', st);\n};\n\nlet carouselInit = () => {\n  $(document).ready(() => {\n    $('.carousel').carousel();\n  });\n};\n\nlet fadeIn = (className, st) => {\n  let ea = d.querySelectorAll(`.${className}`);\n  ea.forEach(ele => {\n    // console.log(ele.offsetTop+showThreshold, st+window.innerHeight);\n    if(st+window.innerHeight>ele.offsetTop+showThreshold){\n      // console.log(\"show \", ele);\n      ele.classList.add(\"in-view\");\n    } else if(ele.offsetTop-hideThreshold>st+window.innerHeight) {\n      // console.log(\"hide\", ele);\n      ele.classList.remove(\"in-view\");\n    }\n  });\n  \n};\n\nmodule.exports.init = () => {\n  // console.log(\"animations init!\");\n  window.onscroll = (e) => {\n    runAnimations(window.pageYOffset);\n  };\n  runAnimations(window.pageYOffset);\n  carouselInit();\n};\n\n//# sourceURL=webpack:///./_js/animations.js?");
+eval("let d = document;\nlet showThreshold = 150;\nlet hideThreshold = 100;\n\nlet runAnimations = (st) => {\n  fadeIn('fade-in', st);\n};\n\nlet fadeIn = (className, st) => {\n  let ea = d.querySelectorAll(`.${className}`);\n  ea.forEach(ele => {\n    // console.log(ele.offsetTop+showThreshold, st+window.innerHeight);\n    if(st+window.innerHeight>ele.offsetTop+showThreshold){\n      // console.log(\"show \", ele);\n      ele.classList.add(\"in-view\");\n    } else if(ele.offsetTop-hideThreshold>st+window.innerHeight) {\n      // console.log(\"hide\", ele);\n      ele.classList.remove(\"in-view\");\n    }\n  });\n  \n};\n\nmodule.exports.init = () => {\n  // console.log(\"animations init!\");\n  window.onscroll = (e) => {\n    runAnimations(window.pageYOffset);\n  };\n  runAnimations(window.pageYOffset);\n};\n\n//# sourceURL=webpack:///./_js/animations.js?");
+
+/***/ }),
+
+/***/ "./_js/comp-init.js":
+/*!**************************!*\
+  !*** ./_js/comp-init.js ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("let carouselInit = () => {\n  $(document).ready(() => {\n    $('.carousel').carousel();\n  });\n};\nlet popoverInit = () => {\n  $(document).ready(() => {\n    let options = {\n      html: true,\n      container: 'body',\n      content: function() {\n        return $(\"#\"+$(this).attr(\"data-pop\")).html();\n      }\n    };\n    $('[data-toggle=\"popover\"]').popover(options);\n  });\n};\n\nmodule.exports.init = () => {\n  popoverInit();\n  carouselInit();\n};\n\n//# sourceURL=webpack:///./_js/comp-init.js?");
 
 /***/ }),
 
@@ -104,7 +115,7 @@ eval("let d = document;\nlet showThreshold = 150;\nlet hideThreshold = 100;\n\nl
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports.init = () => {\n  fetch('https://api.instagram.com/v1/users/self/media/recent/?access_token=2321794898.c625d4b.52d85f33c6074769a1052765b092bc06&count=6')\n    .then(response => {\n      return response.json();\n    })\n    .then(myJson => {\n      console.log(myJson);\n    });\n  document.querySelector(\"#footer-insta-port\").innerHTML = \"test\";\n};\n\n//# sourceURL=webpack:///./_js/insta-recent.js?");
+eval("module.exports.init = () => {\n  fetch('https://api.instagram.com/v1/users/self/media/recent/?access_token=2321794898.c625d4b.52d85f33c6074769a1052765b092bc06&count=8')\n    .then(response => {\n      return response.json();\n    })\n    .then(imgs => {\n      console.log(imgs);\n      let template = document.querySelector(\"#footer-insta-port\").innerHTML;\n      let html = \"\";\n      imgs.data.forEach(img => {\n        html += `${template.replace('##__image_url__##', img.images.standard_resolution.url)\n                      .replace('##__insta_url__##', img.link)\n                      .replace('##__insta_comment__##', img.comments.count)\n                      .replace('##__insta_like__##', img.likes.count)}`;\n      });\n      document.querySelector(\"#footer-insta-port\").innerHTML = html;\n    });\n};\n\n//# sourceURL=webpack:///./_js/insta-recent.js?");
 
 /***/ }),
 
@@ -116,7 +127,7 @@ eval("module.exports.init = () => {\n  fetch('https://api.instagram.com/v1/users
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _animations__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./animations */ \"./_js/animations.js\");\n/* harmony import */ var _animations__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_animations__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _insta_recent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./insta-recent */ \"./_js/insta-recent.js\");\n/* harmony import */ var _insta_recent__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_insta_recent__WEBPACK_IMPORTED_MODULE_1__);\n\n\n\n_animations__WEBPACK_IMPORTED_MODULE_0___default.a.init();\n_insta_recent__WEBPACK_IMPORTED_MODULE_1___default.a.init();\n\n//# sourceURL=webpack:///./_js/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _animations__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./animations */ \"./_js/animations.js\");\n/* harmony import */ var _animations__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_animations__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _insta_recent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./insta-recent */ \"./_js/insta-recent.js\");\n/* harmony import */ var _insta_recent__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_insta_recent__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _comp_init__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./comp-init */ \"./_js/comp-init.js\");\n/* harmony import */ var _comp_init__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_comp_init__WEBPACK_IMPORTED_MODULE_2__);\n\n\n\n\n_comp_init__WEBPACK_IMPORTED_MODULE_2___default.a.init();\n_animations__WEBPACK_IMPORTED_MODULE_0___default.a.init();\n_insta_recent__WEBPACK_IMPORTED_MODULE_1___default.a.init();\n\n//# sourceURL=webpack:///./_js/main.js?");
 
 /***/ })
 

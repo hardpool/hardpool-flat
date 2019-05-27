@@ -26,7 +26,7 @@ layout: contained
     <!-- similar posts -->
     <div class="row my-3">
       <div class="col">
-        <h4 class="section-heading"><span class="sm">You may also enjoy</span></h4>
+        <p class="section-heading"><span class="sm">You may also enjoy</span></p>
         <div class="row md-gutters">
         {% assign maxRelated = 4 %}
         {% assign minCommonTags =  1 %}
@@ -81,10 +81,10 @@ layout: contained
         <!-- shop outfit start -->
         <p class="text-center section-heading"><span class="sm">My outfits</span></p>
         {% assign thumbs = site.posts | where_exp: "item", "item.insta_sc" | slice: 0, 6 %}
-        <div class="row sm-gutters">
+        <div class="row md-gutters">
           {% for post in thumbs %}
           <div class="col-6">
-            <div class="thumb-post" data-toggle="modal" data-target="#mdShop{{ forloop.index }}" style="background-image:url('https://instagram.com/p/{{ post.insta_sc }}/media/?size=m')"></div>
+            <div class="thumb-post mt-3" data-toggle="modal" data-target="#mdShop{{ forloop.index }}" style="background-image:url('https://instagram.com/p/{{ post.insta_sc }}/media/?size=m')"></div>
           </div>
           {% endfor %}
         </div>

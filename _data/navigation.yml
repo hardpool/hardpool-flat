@@ -5,4 +5,8 @@ main:
   - title: "About"
     url: /about
   - title: "Fashion"
-    url: /fashion
+    sub:
+      - title: "Summer"
+        url: /fashion/summer
+      - title: "Winter"
+        url: /fashion/winter

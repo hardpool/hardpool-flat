@@ -2,17 +2,17 @@
 layout: default
 ---
 <!-- banner start -->
-{% assign banners = site.posts | where: "categories", "banner" | slice: 0, 4 %}
+{%- assign banners = site.posts | where: "categories", "banner" | slice: 0, 4 -%}
 <div class="container-fluid bg-grad mb-5">
   <div class="container">
-    <div id="mainbanner" class="carousel slide carousel-fade" data-ride="carousel">
+    <div id="mainbanner" class="carousel slide carousel-fade banner-carousel" data-ride="carousel">
       <ol class="carousel-indicators">
-        {% for post in banners %}
+        {%- for post in banners -%}
         <li data-target="#mainbanner" data-slide-to="{{ forloop.index | minus: 1 }}" {% if forloop.first %}class="active"{% endif %}></li>
-        {% endfor %}
+        {%- endfor -%}
       </ol>
       <div class="carousel-inner">
-        {% for post in banners %}
+        {%- for post in banners -%}
         <div class="carousel-item {% if forloop.first %}active{% endif %}">
           <div class="row">
             <div class="col-9 p-0">
@@ -29,7 +29,7 @@ layout: default
             </div>
           </div>
         </div>
-        {% endfor %}
+        {%- endfor -%}
       </div>
       <div class="carousel-control-wrapper">
         <a class="carousel-control-prev" href="#mainbanner" role="button" data-slide="prev">
@@ -47,24 +47,24 @@ layout: default
 <!-- banner end -->
 <!-- section 2 start -->
 <p class="text-center section-heading"><span>My outfits</span></p>
-{% assign thumbs = site.posts | where_exp: "item", "item.insta_sc" | slice: 0, 6 %}
+{%- assign thumbs = site.posts | where_exp: "item", "item.insta_sc" | slice: 0, 6 -%}
 <div class="container mb-5">
   <div class="row sm-gutters">
-    {% for post in thumbs %}
+    {%- for post in thumbs -%}
     <div class="col col-md-2">
       <div class="thumb-post" style="background-image:url('https://instagram.com/p/{{ post.insta_sc }}/media/?size=m')"></div>
     </div>
-    {% endfor %}
+    {%- endfor -%}
   </div>
 </div>
 <!-- section 2 end -->
 <!-- section 3 start -->
-{% assign featured = site.posts | where: "categories", "featured" %}
+{%- assign featured = site.posts | where: "categories", "featured" -%}
 <div class="container mb-5">
-  {% for post in featured %}
-  {% assign ri = forloop.index | modulo: 2 %}
-  <div class="row my-5 position-relative">
-    <div class="col-6 {% if ri==0 %}order-2 offset-6{% endif %}">
+  {%- for post in featured -%}
+  {%- assign ri = forloop.index | modulo: 2 -%}
+  <div class="row my-7 position-relative">
+    <div class="col-6 {%- if ri==0 -%}order-2 offset-6{%- endif -%}">
       <img src="{{ post.img_v }}" class="d-block w-100" alt="{{ post.title }}">
     </div>
     <div class="col-7 p-0 {% if ri==0 %}overlap-left order-1{% else %}overlap-right{% endif %} d-flex align-items-center h-100">
@@ -72,12 +72,52 @@ layout: default
         <div class="col-12">
           <img src="{{ post.img_h }}" class="d-block w-100 img-overlap" alt="{{ post.title }}">
         </div>
-        <div class="col-10 offset-2">
+        <div class="col-10 mt-2 px-5 {% if ri==1 %}offset-2{% endif %}">
           <h2>{{ post.title }}</h2>
+          <p class="mb-2 outfits-info">
+          {%- assign unique_outfits = post.outfits | uniq -%}
+          {%- for outfit in unique_outfits -%}
+          <span class="px-2 text-primary">{{ outfit.title }}</span>
+          {%- endfor -%}
+          </p>
+          <p>{{ post.excerpt | strip_html | truncate: 80 }}</p>
+          <!-- outfits carousel -->
+          {%- if post.outfits -%}
+          <div id="outfitBanner{{forloop.index}}" class="carousel slide default-carousel" data-ride="carousel">
+            <div class="carousel-inner">
+            {%- for outfit in post.outfits -%}
+            {%- assign rio = forloop.index0 | modulo: 3 -%}
+            {%- if rio!=0 -%}{%- continue -%}{%- else -%}
+            {%- assign i1 = forloop.index0 | plus: 1 -%}
+            {%- assign i2 = forloop.index0 | plus: 2 -%}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+              <div class="row sm-gutters">
+                <div class="col"><a href="{{ post.outfits[forloop.index0].link }}" target="_blank"><div class="thumb-post" style="background-image:url('{{ post.outfits[forloop.index0].img }}')"></div></a></div>
+                <div class="col"><a href="{{ post.outfits[i1].link }}" target="_blank"><div class="thumb-post" style="background-image:url('{{ post.outfits[i1].img }}')"></div></a></div>
+                <div class="col"><a href="{{ post.outfits[i2].link }}" target="_blank"><div class="thumb-post" style="background-image:url('{{ post.outfits[i2].img }}')"></div></a></div>
+              </div>
+            </div>
+            {%- endif -%}
+            {%- endfor -%}
+            </div>
+            <div class="carousel-control-wrapper">
+              <a class="carousel-control-prev" href="#outfitBanner{{forloop.index}}" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#outfitBanner{{forloop.index}}" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+          {%- endif -%}
+          <!-- outfits carousel -->
+          <a href="{{ post.url }}" class="btn btn-secondary mt-3">View post</a>
         </div>
       </div>
     </div>
   </div>
-  {% endfor %}
+  {%- endfor -%}
 </div>
 <!-- section 3 end -->

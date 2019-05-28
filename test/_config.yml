@@ -5,11 +5,35 @@ plugins:
   - jekyll-feed
 
 # Site Settings
-title                     : "Test Site"
+title                     : "Twinkle's portfolio"
 title_separator           : "|"
-main_logo                 : "en-US"
-name                      : "Flat theme"
-description               : "Hardpool Jekyll simple flat theme."
+favicon                   : /assets/fav.ico
+similar_posts:
+  tags_to_match: 2
+
+# Site SEO
+seo:
+  gtmid: GTM-M3MXT24
+
+# Site Header
+main_logo                 : ""
+name                      : "Twinkle Katoch"
+description               : ""
+
+# Site Footer
+copyright: "Twinkle Katoch"
+footer:
+  insta_at: 2321794898.c625d4b.52d85f33c6074769a1052765b092bc06
+  links:
+    - label: "Facebook"
+      icon: "fab fa-fw fa-facebook-f"
+      # url:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      # url:
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      # url:
 
 # Reading Files
 include:

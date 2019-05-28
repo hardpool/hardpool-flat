@@ -9,7 +9,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch",
-    "build": "webpack"
+    "build": "webpack",
+    "publish": "gem build hardpool-flat.gemspec && gem push hardpool-flat-*.gem"
   },
   "repository": {
     "type": "git",

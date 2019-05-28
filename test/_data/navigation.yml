@@ -1,0 +1,17 @@
+# main links
+main:
+  - title: "Home"
+    url: /
+  - title: "About"
+    url: /about/
+  - title: "Fashion"
+    url: /fashion/
+    sub:
+      - title: "Winter"
+        url: /fashion/winter/
+      - title: "Spring"
+        url: /fashion/spring/
+      - title: "Summer"
+        url: /fashion/summer/
+      - title: "Autumn"
+        url: /fashion/autumn/

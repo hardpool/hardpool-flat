@@ -11,12 +11,15 @@
             {%- assign url = link.url | relative_url -%}
           {%- endif -%}
           <!-- {{ page.url }} -->
-          <li class="nav-item" data-toggle="popover" data-placement="bottom" data-pop="submenu{{ forloop.index }}">
-            <a class="nav-link {% if page.url==url %}active{% endif %}" href="{% if link.sub %}#{% else %}{{ url }}{% endif %}">{{ link.title }}</a>
+          <li class="nav-item" data-toggle="popover" data-placement="bottom" data-trigger="manual" data-pop="submenu{{ forloop.index }}">
+            <a class="nav-link {% if page.url==url %}active{% endif %}" href="{% if link.url %}{{ url }}{% else %}#{% endif %}">{{ link.title }}</a>
+            {%- if link.sub -%}
             <div id="submenu{{ forloop.index }}" class="d-none">
-              <p><a>something</a></p>
-              <p><a>something</a></p>
+              {%- for sublink in link.sub -%}
+              <p class="mb-0 px-2 py-1 subnav-item"><a href="{{sublink.url}}">{{sublink.title}}</a></p>  
+              {%- endfor -%}
             </div>
+            {%- endif -%}
           </li>
         {%- endfor -%}
         <!-- show collection navigation -->

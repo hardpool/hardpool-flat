@@ -1,6 +1,13 @@
 # Site Settings
 title                     : "Flat theme"
 title_separator           : "|"
+favicon                   : /test/assets/fav.ico
+similar_posts:
+  tags_to_match: 2
+
+# Site SEO
+seo:
+  gtmid: GTM-M3MXT24
 
 # Site Header
 main_logo                 : ""
@@ -10,6 +17,7 @@ description               : "Hardpool Jekyll simple flat theme."
 # Site Footer
 copyright: "Team Hardpool"
 footer:
+  insta_at: 2321794898.c625d4b.52d85f33c6074769a1052765b092bc06
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter"

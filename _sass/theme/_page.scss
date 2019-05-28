@@ -257,3 +257,7 @@ img {
     }
   }
 }
+/* ****************** header ******************* */
+.subnav-item {
+  border-bottom: 1px solid lighten($gray, 10%);
+}

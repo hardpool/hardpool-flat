@@ -29,9 +29,8 @@ layout: contained
         <p class="section-heading"><span class="sm">You may also enjoy</span></p>
         <div class="row md-gutters">
         {% assign maxRelated = 4 %}
-        {% assign minCommonTags =  1 %}
+        {% assign minCommonTags = site.similar_posts.tags_to_match %}
         {% assign maxRelatedCounter = 0 %}
-        
         {% for post in site.posts %}
       
           {% assign sameTagCount = 0 %}
@@ -48,9 +47,14 @@ layout: contained
           {% endfor %}
       
           {% if sameTagCount >= minCommonTags %}
-          <div class="col">
+          <div class="col-3">
             <a href="{{ post.url }}">
-              <div class="thumb-post" style="background-image:url('https://instagram.com/p/{{ post.insta_sc }}/media/?size=m')"></div>
+              {%- if post.img_t contains 'insta_sc|' -%}
+                {%- capture t_url -%}https://instagram.com/p/{{ post.img_t | replace_first: "insta_sc|", "" }}/media/?size=l{%- endcapture -%}
+              {%- else -%}
+                {%- assign t_url = post.img_t -%}
+              {%- endif -%}
+              <div class="thumb-post" style="background-image:url('{{ t_url }}')"></div>
               <h5 class="mx-2 mt-1 text-center">{{ post.title }}</h5>
             </a>
           </div>
@@ -80,11 +84,16 @@ layout: contained
       <div class="col">
         <!-- shop outfit start -->
         <p class="text-center section-heading"><span class="sm">My outfits</span></p>
-        {% assign thumbs = site.posts | where_exp: "item", "item.insta_sc" | slice: 0, 6 %}
+        {% assign thumbs = site.posts | slice: 0, 6 %}
         <div class="row md-gutters">
           {% for post in thumbs %}
           <div class="col-6">
-            <div class="thumb-post mt-3" data-toggle="modal" data-target="#mdShop{{ forloop.index }}" style="background-image:url('https://instagram.com/p/{{ post.insta_sc }}/media/?size=m')"></div>
+            {%- if post.img_t contains 'insta_sc|' -%}
+              {%- capture t_url -%}https://instagram.com/p/{{ post.img_t | replace_first: "insta_sc|", "" }}/media/?size=l{%- endcapture -%}
+            {%- else -%}
+              {%- assign t_url = post.img_t -%}
+            {%- endif -%}
+            <div class="thumb-post mt-3" data-toggle="modal" data-target="#mdShop{{ forloop.index }}" style="background-image:url('{{ t_url }}')"></div>
           </div>
           {% endfor %}
         </div>
@@ -94,28 +103,4 @@ layout: contained
   </div>
 </div>
 
-<!-- Modal -->
-{% for post in thumbs %}
-<div class="modal fade" id="mdShop{{ forloop.index }}" tabindex="-1" aria-labelledby="exampleModalLongTitle" role="dialog" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">{{ post.title }}</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-          <div class="col"><div class="img-34" style="background-image:url('{{ post.img_v }}')"></div></div>
-          <div class="col-4">Post desc</div>
-        </div>
-      </div>
-      <!-- <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div> -->
-    </div>
-  </div>
-</div>
-{% endfor %}
+{%- include qv_modal.html data=thumbs modalId="mdShop" -%}

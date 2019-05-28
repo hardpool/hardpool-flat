@@ -16,7 +16,8 @@ layout: default
         <div class="carousel-item {% if forloop.first %}active{% endif %}">
           <div class="row">
             <div class="col-9 p-0">
-              <img src="{{ post.img_h }}" class="d-block w-100" alt="{{ post.title }}">
+              <a href="{{ post.url }}"><div class="img-43" style="background-image:url('{{ post.img_h }}')"></div></a>
+              <!-- <img src="{{ post.img_h }}" class="d-block w-100" alt="{{ post.title }}"> -->
             </div>
             <div class="col-5 p-0 overlap-right d-flex align-items-center h-100">
               <div>
@@ -47,12 +48,17 @@ layout: default
 <!-- banner end -->
 <!-- shop outfit start -->
 <p class="section-heading"><span>My outfits</span></p>
-{% assign thumbs = site.posts | where_exp: "item", "item.insta_sc" | slice: 0, 5 %}
+{% assign thumbs = site.posts | slice: 0, 5 %}
 <div class="container mb-5">
   <div class="row sm-gutters">
     {%- for post in thumbs -%}
     <div class="col">
-      <div class="thumb-post" style="background-image:url('https://instagram.com/p/{{ post.insta_sc }}/media/?size=m')"></div>
+      {%- if post.img_t contains 'insta_sc|' -%}
+        {%- capture t_url -%}https://instagram.com/p/{{ post.img_t | replace_first: "insta_sc|", "" }}/media/?size=l{%- endcapture -%}
+      {%- else -%}
+        {%- assign t_url = post.img_t -%}
+      {%- endif -%}
+      <div class="thumb-post" data-toggle="modal" data-target="#mdShop{{ forloop.index }}" style="background-image:url('{{ t_url }}')"></div>
     </div>
     {%- endfor -%}
   </div>
@@ -64,13 +70,15 @@ layout: default
   {%- for post in featured -%}
   {%- assign ri = forloop.index | modulo: 2 -%}
   <div class="row my-7 position-relative">
-    <div class="col-6 {%- if ri==0 -%}order-2 offset-6{%- endif -%}">
-      <img src="{{ post.img_v }}" class="d-block w-100" alt="{{ post.title }}">
+    <div class="col-7 {% if ri==0 %}order-2 offset-5{% endif %}">
+      <a href="{{ post.url }}"><div class="img-34" style="background-image:url('{{ post.img_v }}')"></div></a>
+      <!-- <img src="{{ post.img_v }}" class="d-block w-100" alt="{{ post.title }}"> -->
     </div>
-    <div class="col-7 p-0 {% if ri==0 %}overlap-left order-1{% else %}overlap-right{% endif %} d-flex align-items-center h-100">
+    <div class="col-6 p-0 pt-3 {% if ri==0 %}overlap-left order-1{% else %}overlap-right{% endif %} d-flex align-items-center h-100">
       <div class="row">
         <div class="col-12">
-          <img src="{{ post.img_h }}" class="d-block w-100 img-overlap" alt="{{ post.title }}">
+          <a href="{{ post.url }}"><div class="img-43 img-overlap" style="background-image:url('{{ post.img_h }}')"></div></a>
+          <!-- <img src="{{ post.img_h }}" class="d-block w-100 img-overlap" alt="{{ post.title }}"> -->
         </div>
         <div class="col-10 mt-2 px-5 {% if ri==1 %}offset-2{% endif %}">
           <h2>{{ post.title }}</h2>
@@ -121,3 +129,5 @@ layout: default
   {%- endfor -%}
 </div>
 <!-- section 3 end -->
+
+{%- include qv_modal.html data=thumbs modalId="mdShop" -%}

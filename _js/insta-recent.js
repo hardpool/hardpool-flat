@@ -1,10 +1,10 @@
 module.exports.init = () => {
-  fetch('https://api.instagram.com/v1/users/self/media/recent/?access_token=2321794898.c625d4b.52d85f33c6074769a1052765b092bc06&count=8')
+  fetch(`https://api.instagram.com/v1/users/self/media/recent/?access_token=${config.insta_at}&count=8`)
     .then(response => {
       return response.json();
     })
     .then(imgs => {
-      console.log(imgs);
+      // console.log(imgs);
       let template = document.querySelector("#footer-insta-port").innerHTML;
       let html = "";
       imgs.data.forEach(img => {

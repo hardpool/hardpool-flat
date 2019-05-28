@@ -12,7 +12,26 @@ let popoverInit = () => {
         return $("#"+$(this).attr("data-pop")).html();
       }
     };
-    $('[data-toggle="popover"]').popover(options);
+    $('[data-toggle="popover"]').popover(options)
+      .on("mouseenter", function () {
+        if($(this).attr("data-trigger")!="manual")
+          return;
+        var _this = this;
+        $(this).popover("show");
+        $(".popover").on("mouseleave", function () {
+          $(_this).popover('hide');
+        });
+      })
+      .on("mouseleave", function () {
+        if($(this).attr("data-trigger")!="manual")
+          return;
+        var _this = this;
+        setTimeout(function () {
+          if (!$(".popover:hover").length) {
+            $(_this).popover("hide");
+          }
+        }, 300);
+      });
   });
 };
 

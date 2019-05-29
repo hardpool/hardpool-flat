@@ -54,7 +54,7 @@ layout: contained
               {%- else -%}
                 {%- assign t_url = post.img_t -%}
               {%- endif -%}
-              <div class="thumb-post" style="background-image:url('{{ t_url }}')"></div>
+              <div class="thumb-post gtm-similar-post" data-title="{{ post.title }}" style="background-image:url('{{ t_url }}')"></div>
               <h5 class="mx-2 mt-1 text-center">{{ post.title }}</h5>
             </a>
           </div>
@@ -93,7 +93,7 @@ layout: contained
             {%- else -%}
               {%- assign t_url = post.img_t -%}
             {%- endif -%}
-            <div class="thumb-post mt-3" data-toggle="modal" data-target="#mdShop{{ forloop.index }}" style="background-image:url('{{ t_url }}')"></div>
+            <div class="thumb-post mt-3 gtm-post-shop" data-title="{{ post.title }}" data-toggle="modal" data-target="#mdShop{{ forloop.index }}" style="background-image:url('{{ t_url }}')"></div>
           </div>
           {% endfor %}
         </div>

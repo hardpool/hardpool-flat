@@ -8,10 +8,10 @@ module.exports.init = () => {
       let template = document.querySelector("#footer-insta-port").innerHTML;
       let html = "";
       imgs.data.forEach(img => {
-        html += `${template.replace('##__image_url__##', img.images.standard_resolution.url)
-                      .replace('##__insta_url__##', img.link)
-                      .replace('##__insta_comment__##', img.comments.count)
-                      .replace('##__insta_like__##', img.likes.count)}`;
+        html += `${template.replace(/##__image_url__##/g, img.images.standard_resolution.url)
+                      .replace(/##__insta_url__##/g, img.link)
+                      .replace(/##__insta_comment__##/g, img.comments.count)
+                      .replace(/##__insta_like__##/g, img.likes.count)}`;
       });
       document.querySelector("#footer-insta-port").innerHTML = html;
     });

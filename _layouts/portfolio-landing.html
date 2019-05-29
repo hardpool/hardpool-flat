@@ -16,7 +16,7 @@ layout: default
         <div class="carousel-item {% if forloop.first %}active{% endif %}">
           <div class="row">
             <div class="col-9 p-0">
-              <a href="{{ post.url }}"><div class="img-43" style="background-image:url('{{ post.img_h }}')"></div></a>
+              <a href="{{ post.url }}"><div class="img-43 gtm-landing-banner" data-title="{{ post.title }}" style="background-image:url('{{ post.img_h }}')"></div></a>
               <!-- <img src="{{ post.img_h }}" class="d-block w-100" alt="{{ post.title }}"> -->
             </div>
             <div class="col-5 p-0 overlap-right d-flex align-items-center h-100">
@@ -25,7 +25,7 @@ layout: default
                   <h2>{{ post.title }}</h2>
                   <p>{{ post.excerpt | strip_html | truncate: 150 }}</p>
                 </div>
-                <a href="{{ post.url }}" class="btn btn-secondary float-right mt-3">View post</a>
+                <a href="{{ post.url }}" class="btn btn-secondary float-right mt-3 gtm-landing-banner" data-title="{{ post.title }}">View post</a>
               </div>
             </div>
           </div>
@@ -58,7 +58,7 @@ layout: default
       {%- else -%}
         {%- assign t_url = post.img_t -%}
       {%- endif -%}
-      <div class="thumb-post" data-toggle="modal" data-target="#mdShop{{ forloop.index }}" style="background-image:url('{{ t_url }}')"></div>
+      <div class="thumb-post gtm-landing-shop" data-title="{{ post.title }}" data-toggle="modal" data-target="#mdShop{{ forloop.index }}" style="background-image:url('{{ t_url }}')"></div>
     </div>
     {%- endfor -%}
   </div>
@@ -71,13 +71,13 @@ layout: default
   {%- assign ri = forloop.index | modulo: 2 -%}
   <div class="row my-7 position-relative">
     <div class="col-7 {% if ri==0 %}order-2 offset-5{% endif %}">
-      <a href="{{ post.url }}"><div class="img-34" style="background-image:url('{{ post.img_v }}')"></div></a>
+      <a href="{{ post.url }}"><div class="img-34 gtm-landing-featured" data-title="{{ post.title }}" style="background-image:url('{{ post.img_v }}')"></div></a>
       <!-- <img src="{{ post.img_v }}" class="d-block w-100" alt="{{ post.title }}"> -->
     </div>
     <div class="col-6 p-0 pt-3 {% if ri==0 %}overlap-left order-1{% else %}overlap-right{% endif %} d-flex align-items-center h-100">
       <div class="row">
         <div class="col-12">
-          <a href="{{ post.url }}"><div class="img-43 img-overlap" style="background-image:url('{{ post.img_h }}')"></div></a>
+          <a href="{{ post.url }}"><div class="img-43 img-overlap gtm-landing-featured" data-title="{{ post.title }}" style="background-image:url('{{ post.img_h }}')"></div></a>
           <!-- <img src="{{ post.img_h }}" class="d-block w-100 img-overlap" alt="{{ post.title }}"> -->
         </div>
         <div class="col-10 mt-2 px-5 {% if ri==1 %}offset-2{% endif %}">
@@ -100,9 +100,9 @@ layout: default
             {%- assign i2 = forloop.index0 | plus: 2 -%}
             <div class="carousel-item {% if forloop.first %}active{% endif %}">
               <div class="row sm-gutters">
-                <div class="col"><a href="{{ post.outfits[forloop.index0].link }}" target="_blank"><div class="thumb-post" style="background-image:url('{{ post.outfits[forloop.index0].img }}')"></div></a></div>
-                <div class="col"><a href="{{ post.outfits[i1].link }}" target="_blank"><div class="thumb-post" style="background-image:url('{{ post.outfits[i1].img }}')"></div></a></div>
-                <div class="col"><a href="{{ post.outfits[i2].link }}" target="_blank"><div class="thumb-post" style="background-image:url('{{ post.outfits[i2].img }}')"></div></a></div>
+                <div class="col"><a href="{{ post.outfits[forloop.index0].link }}" target="_blank"><div class="thumb-post gtm-shop-item" data-title="{{ post.outfits[forloop.index0].title }} | {{ post.outfits[forloop.index0].link }}" style="background-image:url('{{ post.outfits[forloop.index0].img }}')"></div></a></div>
+                <div class="col"><a href="{{ post.outfits[i1].link }}" target="_blank"><div class="thumb-post gtm-shop-item" data-title="{{ post.outfits[i1].title }} | {{ post.outfits[i1].link }}" style="background-image:url('{{ post.outfits[i1].img }}')"></div></a></div>
+                <div class="col"><a href="{{ post.outfits[i2].link }}" target="_blank"><div class="thumb-post gtm-shop-item" data-title="{{ post.outfits[i2].title }} | {{ post.outfits[i2].link }}" style="background-image:url('{{ post.outfits[i2].img }}')"></div></a></div>
               </div>
             </div>
             {%- endif -%}
@@ -121,7 +121,7 @@ layout: default
           </div>
           {%- endif -%}
           <!-- outfits carousel -->
-          <a href="{{ post.url }}" class="btn btn-secondary mt-3">View post</a>
+          <a href="{{ post.url }}" class="btn btn-secondary mt-3 gtm-landing-featured" data-title="{{ post.title }}">View post</a>
         </div>
       </div>
     </div>

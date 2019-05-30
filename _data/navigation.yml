@@ -15,3 +15,5 @@ main:
         url: /fashion/summer/
       - title: "Autumn"
         url: /fashion/autumn/
+  - title: "Travel"
+    url: /tarvel/

@@ -3,7 +3,8 @@
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
       <a class="navbar-brand" href="/">{{ site.name }}</a>
-      <ul class="nav ml-auto">
+      <a class="mobile-nav-handle d-md-none" href="javascript:header.toggle();"><i id="nav-handle-icon" class="fas fa-bars"></i></a>
+      <ul id="navigation" class="nav nav-mobile ml-auto">
         {%- for link in site.data.navigation.main -%}
           {%- if link.url contains '://' -%}
             {%- assign url = link.url -%}
@@ -11,10 +12,10 @@
             {%- assign url = link.url | relative_url -%}
           {%- endif -%}
           <!-- {{ page.url }} -->
-          <li class="nav-item" data-toggle="popover" data-placement="bottom" data-trigger="manual" data-pop="submenu{{ forloop.index }}">
+          <li class="nav-item" data-toggle="nav-popover" data-placement="bottom" data-trigger="manual" data-pop="submenu{{ forloop.index }}">
             <a class="nav-link {% if page.url==url %}active{% endif %}" href="{% if link.url %}{{ url }}{% else %}#{% endif %}">{{ link.title }}</a>
             {%- if link.sub -%}
-            <div id="submenu{{ forloop.index }}" class="d-none">
+            <div id="submenu{{ forloop.index }}" class="d-md-none">
               {%- for sublink in link.sub -%}
               <p class="mb-0 px-2 py-1 subnav-item"><a href="{{sublink.url}}">{{sublink.title}}</a></p>  
               {%- endfor -%}

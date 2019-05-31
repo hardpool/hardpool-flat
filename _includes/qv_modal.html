@@ -18,9 +18,9 @@ modal id prefix attribute   "modalId"
       </div>
       <div class="modal-body">
         <div class="row">
-          <div class="col"><div class="img-34" style="background-image:url('{{ post.img_v }}')"></div></div>
-          <div class="col-5">
-            <p class="mb-2 outfits-info">
+          <div class="col-md"><div class="img-34" style="background-image:url('{{ post.img_v }}')"></div></div>
+          <div class="col-md-5">
+            <p class="mb-2 outfits-info mt-3 mt-md-0">
               {%- assign unique_outfits = post.outfits | uniq -%}
               {%- for outfit in unique_outfits -%}
               <span class="px-2 text-primary">{{ outfit.title }}</span>
@@ -29,7 +29,7 @@ modal id prefix attribute   "modalId"
             <p>{{post.excerpt | truncate: 150}}</p>
             <div class="row md-gutters">
             {%- for outfit in post.outfits -%}
-              <div class="col-6 mb-3"><a href="{{ outfit.link }}" target="_blank"><div class="thumb-post gtm-shop-item" data-title="{{ outfit.title }} | {{ outfit.link }}" style="background-image:url('{{ outfit.img }}')"></div></a></div>
+              <div class="col-4 col-md-6 mb-3"><a href="{{ outfit.link }}" target="_blank"><div class="thumb-post gtm-shop-item" data-title="{{ outfit.title }} | {{ outfit.link }}" style="background-image:url('{{ outfit.img }}')"></div></a></div>
             {%- endfor -%}
             </div>
           </div>

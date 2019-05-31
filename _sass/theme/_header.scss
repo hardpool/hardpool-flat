@@ -5,6 +5,14 @@ header {
     font-family: 'Dancing Script', cursive;
     font-size: 3rem;
     color: $dark;
+
+    @media (max-width: 767px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  .subnav-item {
+    border-bottom: 1px solid lighten($gray, 10%);
   }
 
   &.style-default{
@@ -45,6 +53,55 @@ header {
         &.active {
           color: $primary;
         }
+      }
+    }
+  }
+
+  .mobile-nav-handle{
+    font-size: 1.5rem;
+    padding: 0 0.5rem;
+    z-index: 101;
+  }
+
+  @media (max-width: 767px) {
+    .nav-mobile {
+      @include transition(all, 0.4s);
+      display: block;
+      opacity: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: rgba(255,255,255,0.95);
+      width: 100%;
+      height: 0;
+      z-index: 100;
+      padding-top: 5rem;
+      overflow: hidden;
+
+      &.active {
+        // display: block;
+        height: 100%;
+        opacity: 1;
+      }
+      .nav-item{
+        margin: 0 1rem;
+    
+        .nav-link{
+          color: $dark;
+          font-size: 1.3rem;
+          padding: 0.5rem;
+    
+          &.active {
+            color: $primary;
+          }
+        }
+      }
+    }
+    .subnav-item {
+      border-bottom: none;
+      margin-left: 1rem;
+      a {
+        color: lighten($color: #333, $amount: 30%);
       }
     }
   }

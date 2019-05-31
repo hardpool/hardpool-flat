@@ -3,7 +3,9 @@ let carouselInit = () => {
     $('.carousel').carousel();
   });
 };
-let popoverInit = () => {
+let navPopoverInit = () => {
+  if(window.innerWidth<768)
+    return;
   $(document).ready(() => {
     let options = {
       html: true,
@@ -12,7 +14,7 @@ let popoverInit = () => {
         return $("#"+$(this).attr("data-pop")).html();
       }
     };
-    $('[data-toggle="popover"]').popover(options)
+    $('[data-toggle="nav-popover"]').popover(options)
       .on("mouseenter", function () {
         if($(this).attr("data-trigger")!="manual")
           return;
@@ -36,6 +38,6 @@ let popoverInit = () => {
 };
 
 module.exports.init = () => {
-  popoverInit();
+  navPopoverInit();
   carouselInit();
 };

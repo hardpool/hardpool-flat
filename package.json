@@ -8,8 +8,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "bundle exec jekyll serve",
     "watch": "webpack --watch",
-    "build": "webpack",
+    "build-js": "webpack",
     "publish": "gem build hardpool-flat.gemspec && gem push hardpool-flat-*.gem"
   },
   "repository": {

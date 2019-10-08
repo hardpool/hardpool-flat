@@ -16,17 +16,15 @@ layout: contained
       </div>
     </div>
     <!-- post -->
-    <div class="row my-3">
+    <!-- <div class="row my-3">
       <div class="col">
         <div class="img-43 mb-3" style="background-image:url('{{ page.img_h }}')"></div>
         <div class="img-34" style="background-image:url('{{ page.img_v }}')"></div>
-        <!-- <img src="{{ page.img_h }}" class="img-fluid mb-3">
-        <img src="{{ page.img_v }}" class="img-fluid"> -->
       </div>
-    </div>
+    </div> -->
     <div class="row my-3">
-      <div class="col">
-      {{ content }}
+      <div class="col post-content-wrapper">
+      {{ content | replace: 'media/', '/media/' }}
       </div>
     </div>
     <!-- similar posts -->
@@ -110,3 +108,5 @@ layout: contained
 </div>
 
 {%- include qv_modal.html data=thumbs modalId="mdShop" -%}
+
+<script>let layout = "post";</script>

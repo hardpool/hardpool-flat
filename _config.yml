@@ -13,6 +13,11 @@ seo:
 main_logo                 : ""
 name                      : "Flat theme"
 description               : "Hardpool Jekyll simple flat theme."
+header:
+  links:
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: https://www.instagram.com/hardikdabhi22/
 
 # Site Footer
 copyright: "Team Hardpool"
@@ -36,7 +41,7 @@ footer:
       # url:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      # url:
+      url: https://www.instagram.com/hardikdabhi22/
 
 # Sass/SCSS
 sass:

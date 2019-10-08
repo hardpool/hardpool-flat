@@ -24,7 +24,13 @@ h1,h2,h3,h4,h5,
 }
 a {
 	outline: none;
-	cursor: pointer;
+  cursor: pointer;
+  color: darken($primary, 20%);
+
+  &:hover {
+    color: $primary;
+    text-decoration: underline;
+  }
 }
 table{
 	height: 100%;

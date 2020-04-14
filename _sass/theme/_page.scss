@@ -11,6 +11,16 @@ a h1 {
 }
 img {
   image-orientation: from-image;
+
+  @extend .img-fluid;
+}
+table {
+  @extend .table;
+
+  height: auto;
+  thead {
+    @extend .thead-dark;
+  }
 }
 .btn {
   border-radius: 0;

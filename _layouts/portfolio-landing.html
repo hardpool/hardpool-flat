@@ -47,6 +47,9 @@ layout: default
 </div>
 <!-- banner end -->
 <!-- shop outfit start -->
+{% if site.landing.shop %}
+  {{ site.landing.shop }}
+{% else %}
 <p class="section-heading"><span>My outfits</span></p>
 {% assign thumbs = site.posts | slice: 0, 5 %}
 <div class="container mb-5">
@@ -63,6 +66,7 @@ layout: default
     {%- endfor -%}
   </div>
 </div>
+{% endif %}
 <!-- shop outfit start end -->
 <!-- section 3 start -->
 {%- assign featured = site.posts | where: "categories", "featured" -%}

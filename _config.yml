@@ -19,6 +19,14 @@ header:
       icon: "fab fa-fw fa-instagram"
       url: https://www.instagram.com/hardikdabhi22/
 
+# site landing
+landing:
+  shop: 
+
+# site post
+post:
+  sidebar: 
+
 # Site Footer
 copyright: "Team Hardpool"
 footer:

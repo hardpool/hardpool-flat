@@ -86,6 +86,11 @@ layout: contained
   <div class="col-md-4">
     <div class="row">
       <div class="col">
+        {% if page.sidebar %}
+          {{ page.sidebar }}
+        {% elsif site.post.sidebar %}
+          {{ site.post.sidebar }}
+        {% else %}
         <!-- shop outfit start -->
         <p class="text-center section-heading"><span class="sm">My outfits</span></p>
         {% assign thumbs = site.posts | slice: 0, 6 %}
@@ -102,6 +107,7 @@ layout: contained
           {% endfor %}
         </div>
         <!-- shop outfit start end -->
+        {% endif %}
       </div>
     </div>
   </div>

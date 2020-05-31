@@ -1,19 +1,19 @@
 # main links
 main:
-  - title: "Home"
+  - title: "Documentation"
     url: /
-  - title: "About"
-    url: /about/
-  - title: "Fashion"
-    url: /fashion/
-    sub:
-      - title: "Winter"
-        url: /fashion/winter/
-      - title: "Spring"
-        url: /fashion/spring/
-      - title: "Summer"
-        url: /fashion/summer/
-      - title: "Autumn"
-        url: /fashion/autumn/
-  - title: "Travel"
-    url: /tarvel/
+  - title: "Demo"
+    url: /demo/
+  # - title: "Fashion"
+  #   url: /fashion/
+  #   sub:
+  #     - title: "Winter"
+  #       url: /fashion/winter/
+  #     - title: "Spring"
+  #       url: /fashion/spring/
+  #     - title: "Summer"
+  #       url: /fashion/summer/
+  #     - title: "Autumn"
+  #       url: /fashion/autumn/
+  # - title: "Travel"
+  #   url: /tarvel/

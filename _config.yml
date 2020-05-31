@@ -2,6 +2,7 @@
 title                     : "Flat theme"
 title_separator           : "|"
 favicon                   : /test/assets/fav.ico
+csstheme                  : "project"
 similar_posts:
   tags_to_match: 2
 
@@ -11,12 +12,12 @@ seo:
 
 # Site Header
 main_logo                 : ""
-name                      : "Flat theme"
+name                      : "@hardpool/ngx-spinner"
 description               : "Hardpool Jekyll simple flat theme."
 header:
   links:
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
+    - label: ""
+      icon: "fab fa-github fa-2x"
       url: https://www.instagram.com/hardikdabhi22/
 
 # site landing

@@ -1,0 +1,158 @@
+// stylelint-disable selector-max-type
+.markdown-body {
+  // Inline code snippets
+  code,
+  tt {
+    // stylelint-disable-next-line primer/spacing
+    padding: 0.2em 0.4em;
+    margin: 0;
+    // stylelint-disable-next-line primer/typography
+    font-size: 85%;
+    // stylelint-disable-next-line primer/colors
+    background-color: rgba($black, 0.05);
+    border-radius: $border-radius;
+
+    br { display: none; }
+  }
+
+  del code { text-decoration: inherit; }
+
+  pre {
+    word-wrap: normal;
+
+    // Code tags within code blocks (<pre>s)
+    > code {
+      padding: 0;
+      margin: 0;
+      // stylelint-disable-next-line primer/typography
+      font-size: 100%;
+      word-break: normal;
+      white-space: pre;
+      background: transparent;
+      border: 0;
+    }
+  }
+
+  .highlight {
+    margin-bottom: $spacer-3;
+
+    pre {
+      margin-bottom: 0;
+      word-break: normal;
+    }
+  }
+
+  .highlight pre,
+  pre {
+    padding: $spacer-3;
+    overflow: auto;
+    // stylelint-disable-next-line primer/typography
+    font-size: 85%;
+    // stylelint-disable-next-line primer/typography
+    line-height: 1.45;
+    background-color: #444242; //$bg-gray;
+    border-radius: $border-radius;
+  }
+
+  pre code,
+  pre tt {
+    display: inline;
+    max-width: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    line-height: inherit;
+    word-wrap: normal;
+    background-color: transparent;
+    border: 0;
+  }
+
+}
+
+/* 
+An Old Hope – Star Wars Syntax (c) Gustavo Costa <gusbemacbe@gmail.com>
+Original theme - Ocean Dark Theme – by https://github.com/gavsiu
+Based on Jesse Leite's Atom syntax theme 'An Old Hope' – https://github.com/JesseLeite/an-old-hope-syntax-atom
+*/
+
+/* Death Star Comment */
+.hljs-comment,
+.hljs-quote 
+{
+  color: #B6B18B;
+}
+
+/* Darth Vader */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion 
+{
+  color: #EB3C54;
+}
+
+/* Threepio */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link 
+{
+  color: #E7CE56;
+}
+
+/* Luke Skywalker */
+.hljs-attribute 
+{
+  color: #EE7C2B;
+}
+
+/* Obi Wan Kenobi */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition 
+{
+  color: #4FB4D7;
+}
+
+/* Yoda */
+.hljs-title,
+.hljs-section 
+{
+  color: #78BB65;
+}
+
+/* Mace Windu */
+.hljs-keyword,
+.hljs-selector-tag 
+{
+  color: #B45EA4;
+}
+
+/* Millenium Falcon */
+.hljs 
+{
+  display: block;
+  overflow-x: auto;
+  background: #1C1D21;
+  color: #c0c5ce;
+  padding: 0.5em;
+}
+
+.hljs-emphasis 
+{
+  font-style: italic;
+}
+
+.hljs-strong 
+{
+  font-weight: bold;
+}

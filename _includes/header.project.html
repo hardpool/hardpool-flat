@@ -1,12 +1,7 @@
 {% assign logo_path = site.main_logo %}
-{%- if layout.header.style -%}
-  {%- assign hdrStyle = layout.header.style -%}
-{%- else -%}
-  {%- assign hdrStyle = "style-1" -%}
-{%- endif -%}
-<header class="{{hdrStyle}}">
+<header class="style-default">
   <nav class="navbar navbar-expand-lg navbar-light">
-    <div class="container-fluid">
+    <div class="container">
       <a class="navbar-brand" href="/">{{ site.name }}</a>
       <div class="mobile-link d-md-none">
       {%- if site.header.links -%}
@@ -64,7 +59,7 @@
         {%- for link in site.header.links -%}
           {%- if link.label -%}
             <div class="mt-md-0 mt-3 nav-item d-none d-md-block">
-              <a class="btn btn-primary btn-follow" target="_blank" href="{{ link.url | default: '#' }}"><span>{{link.label}}</span><i class="{{ link.icon | default: 'fas fa-link' }} ml-2" aria-hidden="true"></i></a>
+              <a class="btn btn-primary btn-follow" target="_blank" href="{{ link.url | default: '#' }}"><span>Follow me</span><i class="{{ link.icon | default: 'fas fa-link' }} ml-2" aria-hidden="true"></i></a>
             </div>
           {%- endif -%}
         {%- endfor -%}

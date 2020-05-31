@@ -1,0 +1,20 @@
+<footer class="project">
+  <div class="container-fluid p-5 bg-light">
+    <div class="row">
+      <div class="col">
+        {%- if site.footer.links -%}
+          {%- for link in site.footer.links -%}
+            {%- if link.label -%}
+              <a class="mr-3" target="_blank" href="{{ link.url | default: '#' }}">{{link.label}}</a>
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endif -%}
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col">
+        <p class="m-0 text-info">{{ site.copyright | default: site.title }}</p>
+      </div>
+    </div>
+  </div>
+</footer>

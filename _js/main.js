@@ -9,4 +9,6 @@ animations.init();
 instaRecent.init();
 post.init();
 
+hljs.initHighlighting();
+
 window.header = header;

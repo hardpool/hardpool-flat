@@ -1,4 +1,4 @@
-header {
+header.style-1 {
   border-top: 0.4rem solid $primary;
   
   .navbar-light .navbar-brand{
@@ -41,7 +41,7 @@ header {
     }
   }
   
-  &.style-1 {
+  // &.style-1 {
     .nav-item{
       margin: 0 0.7rem;
   
@@ -58,7 +58,7 @@ header {
         }
       }
     }
-  }
+  // }
 
   .mobile-nav-handle{
     font-size: 1.5rem;
@@ -137,6 +137,61 @@ header {
 
     &:hover {
       text-decoration: none;
+      color: $primary;
+    }
+  }
+}
+
+header.project {
+  position: sticky;
+  background-color: $primary;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.05),inset 0 -1px 0 rgba(0,0,0,.1);
+  top: 0;
+  z-index: 1071;
+
+  .navbar-brand {
+    color: #fff;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 1.1rem;
+    &:hover {
+      color: $light;
+    }
+  }
+  .nav-item{
+    margin: 0 0.7rem;
+
+    .nav-link{
+      color: #ccc;
+      font-size: 1rem;
+      padding: 0.1rem 0.2rem;
+
+      &.active {
+        color: #fff;
+      }
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  .btn-follow {
+    padding: 0;
+
+    &:hover {
+      color: $light;
+      background-color: transparent;
+      border-color: transparent;
+    }
+  }
+}
+footer.project {
+  font-size: 0.875rem;
+  font-weight: 600;
+
+  a {
+    color: #495057;
+    &:hover {
       color: $primary;
     }
   }

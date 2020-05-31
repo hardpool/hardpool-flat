@@ -1,3 +1,4 @@
+.blogger {
 p, li {
   color: darken($color: $gray, $amount: 50%);
 }
@@ -211,6 +212,7 @@ table {
     opacity: 0.6;
   }
 }
+}
 
 /* ****************** portfolio ******************* */
 /* .portfolio-item {
@@ -287,5 +289,25 @@ table {
         opacity: 1;
       }
     }
+  }
+}
+
+/* ****************** project ******************* */
+.project-head {
+  position: relative;
+  padding: 10rem 15px;
+  background: linear-gradient(to right bottom,lighten(desaturate($primary, $desaturate), $lighten) 50%,#fff 50%);
+
+  .btn-lg {
+    padding: .8rem 2rem;
+    font-size: 1.25rem;
+  }
+  h1 {
+    font-size: 4rem;
+  }
+  .lead {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #495057;
   }
 }

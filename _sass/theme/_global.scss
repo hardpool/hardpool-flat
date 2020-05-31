@@ -6,7 +6,7 @@
 // @include font-face(woodford, "/assets/fonts/woodford/woodfordbourne-thinitalic", 100, italic, otf);
 
 //========= global styles ==========
-html, body {
+html, body.blogger {
 	font: {
     size: 16px;
     family: 'Montserrat', sans-serif;
@@ -16,11 +16,13 @@ html, body {
 body {
   overflow-x: hidden;
 }
+.blogger {
 h1,h2,h3,h4,h5,
 .h1,.h2,.h3,.h4,.h5{
   font-weight: bold;
   font-family: 'Playfair Display', serif;
   color: #000;
+}
 }
 a {
 	outline: none;

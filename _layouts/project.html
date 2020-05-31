@@ -1,0 +1,30 @@
+---
+layout: default
+header: 
+  style: project
+footer: 
+  html: footer.project.html
+---
+<main class="container-fluid project-head">
+  <div class="container">
+    <!-- banner -->
+    <div class="row">
+      <div class="col">
+        <h1>{{page.banner.title}}</h1>
+        <p class="lead">{{page.banner.description}}</p>
+        <div class="d-flex flex-column flex-md-row">
+          <a class="btn btn-lg btn-primary mb-3 mr-md-3" href="#">Get started</a>
+          <a class="btn btn-lg btn-outline-secondary mb-3" href="#">Demo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<!-- page content -->
+<div class="container">
+  <div class="row">
+    <div class="col markdown-body">
+      {{content}}
+    </div>
+  </div>
+</div>

@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "hardpool-flat"
-  spec.version       = "2.2.0"
+  spec.version       = "3.1.0"
   spec.authors       = ["Hardik Dabhi"]
   spec.email         = ["hardik.dabhi@live.co.uk"]
 

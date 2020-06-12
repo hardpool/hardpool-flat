@@ -196,3 +196,36 @@ footer.project {
     }
   }
 }
+
+header.style-default {
+  .banner {
+    background-color: $light;
+    position: absolute;
+    width: 100%;
+    height: 14.5rem;
+  }
+  .main-logo{
+    $size: 12rem;
+    height: $size;
+    width: $size;
+    border-radius: 100%;
+    background-color: $gray;
+    display: inline-block;
+    overflow: hidden;
+  }
+
+  .nav-item{
+    margin: 0 0.7rem;
+
+    .nav-link{
+      color: $dark;
+      font-weight: bold;
+      font-size: 1.2rem;
+      padding: 0.1rem 0.2rem;
+
+      &.active {
+        border-bottom: 2px solid $primary;
+      }
+    }
+  }
+}

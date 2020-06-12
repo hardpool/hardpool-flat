@@ -2,7 +2,7 @@
 title                     : "Flat theme"
 title_separator           : "|"
 favicon                   : /test/assets/fav.ico
-csstheme                  : "project"
+csstheme                  : "site"
 similar_posts:
   tags_to_match: 2
 
@@ -11,9 +11,9 @@ seo:
   gtmid: GTM-M3MXT24
 
 # Site Header
-main_logo                 : ""
-name                      : "@hardpool/ngx-spinner"
-description               : "Hardpool Jekyll simple flat theme."
+main_logo                 : "https://s.gravatar.com/avatar/57ab9065cb1800ee75c6a34f27d78707?s=192"
+name                      : "Hardik Dabhi"
+description               : "Software Developer, Applications<span class='mx-2'>&#8226;</span><a target='_blank' href='https://github.com/hardikdabhi'>@hardikdabhi</a>"
 header:
   links:
     - label: ""
@@ -29,7 +29,7 @@ post:
   sidebar: 
 
 # Site Footer
-copyright: "Team Hardpool"
+copyright: "Developed using Jekyll & Github pages"
 footer:
   insta_at: 2321794898.c625d4b.52d85f33c6074769a1052765b092bc06
   links:

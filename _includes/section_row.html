@@ -20,7 +20,7 @@ array of below is understood
 
 <div class="animation-wrapper">
   {% for r in data %}
-  <div class="fade-in pb-7">
+  <div class="fade-in py-5 section-container">
     <div class="row">
       <div class="col">
         <h1 class="display-4 text-center mb-0">{{ r.title }}</h1>
@@ -31,7 +31,7 @@ array of below is understood
     <div class="row">
       <div class="col-8 offset-2">
         <p class="text-lg mt-3">{{ r.excerpt }}</p>
-        <a class="btn btn-primary" href="{{ r.url }}">{{ r.btn_text }}</a>
+        <a class="btn btn-primary btn-lg" href="{{ r.url }}">{{ r.btn_text }}</a>
       </div>
     </div>
   </div>

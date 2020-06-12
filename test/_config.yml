@@ -10,6 +10,7 @@ title_separator           : "|"
 favicon                   : /assets/fav.ico
 similar_posts:
   tags_to_match: 2
+scss                      : "colors"
 
 # Site SEO
 seo:
@@ -38,3 +39,6 @@ footer:
 # Reading Files
 include:
   - _pages
+
+sass:
+  sass_dir: _sass

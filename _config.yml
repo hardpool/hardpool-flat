@@ -55,6 +55,7 @@ footer:
 # Sass/SCSS
 sass:
   style: compressed
+  sass_dir: _sass
 
 # Reading Files
 include:

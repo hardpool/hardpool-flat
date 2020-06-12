@@ -3,4 +3,9 @@
 # only Main files contain this front matter, not partials.
 ---
 
+@import 'var';
+// user scss imports
+{% if site.scss %}
+@import '{{ site.scss }}';
+{% endif %}
 @import 'theme';
